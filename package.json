@@ -1,0 +1,13 @@
+{
+  "name": "f26comp3104",
+  "version": "1.0.0",
+  "description": "COMP3104 DevOps labs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Warning: No tests created yet.\""
+  },
+  "keywords": [],
+  "author": "Tanzeem Shaikh",
+  "license": "ISC"
+}
+
