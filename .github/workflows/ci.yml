@@ -16,16 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node (with cache)
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests
         run: npm test
+
+      - name: Build React app
+        run: yarn build
+
+      - name: Add 404 page for SPA routing
+        run: cp build/index.html build/404.html
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
